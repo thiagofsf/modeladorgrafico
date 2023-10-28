@@ -33,11 +33,12 @@ class MyWindow(QMainWindow):
         self.granularitySpinBox.setValue(50)
         self.granularitySpinBox.setMaximum(100)
         tb2.addWidget(self.granularitySpinBox)
-
+        #definindo triggers
         tb.actionTriggered[QAction].connect(self.tbpressed)
         tb2.actionTriggered[QAction].connect(self.tbpressed)
         self.granularitySpinBox.valueChanged.connect(self.setGranularity)
     
+    #função que detecta e executa actions das toolbars
     def tbpressed(self, a):
         if a.text() == "fit":
             self.canvas.fitWorldToViewport()
@@ -53,6 +54,7 @@ class MyWindow(QMainWindow):
             self.canvas.resetCanvas()
             print('reset')
 
+    #função que ajusta a granularidade de acordo com a atualização do elemento
     def setGranularity(self):
         value = self.granularitySpinBox.value()
         print("granularity: ", value, sep="")
