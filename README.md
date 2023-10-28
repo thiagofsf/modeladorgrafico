@@ -134,7 +134,7 @@ O valor padrão é **50**, o valor máximo permitido é **100**, esse valor máx
 
 ## Resize - Redimensionando a janela
 
-A janela pode ser redimmensionada pelas extremidades, quando feito, o desenho será ajustado ao tamanho de janela disponível, a proporção é garantida:
+A janela pode ser redimensionada pelas extremidades, quando feito, o desenho será ajustado ao tamanho de janela disponível, a proporção é garantida:
 
 Exemplo de janela no tamanho padrão:
 
