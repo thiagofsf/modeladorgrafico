@@ -3,12 +3,11 @@ from PyQt5.QtWidgets import *
 from OpenGL.GL import *
 from PyQt5 import QtCore
 
-from he.hecontroller import HeController
-from he.hemodel import HeModel
-from geometry.segments.line import Line
-from geometry.segments.polyline import Polyline
+from hetool.include.hetool import HeController
+from hetool.include.hetool import HeModel
+from hetool.geometry.segments.polyline import Polyline
 from geometry.point import Point
-from compgeom.tesselation import Tesselation
+from hetool.compgeom.tesselation import Tesselation
 
 class MyCanvas(QtOpenGL.QGLWidget):
 
@@ -116,11 +115,17 @@ class MyCanvas(QtOpenGL.QGLWidget):
                 pts = pat.getPoints()
                 triangs = Tesselation.tessellate(pts)
                 for j in range(0, len(triangs)):
+                    #print("ponto [", j, "] [0]: ", triangs[j][0].getX(), sep="")
                     glColor3f(1.0, 0.0, 1.0)
                     glBegin(GL_TRIANGLES)
+                    glVertex2d(triangs[j][0].getX(), triangs[j][0].getY())
+                    glVertex2d(triangs[j][1].getX(), triangs[j][1].getY())
+                    glVertex2d(triangs[j][2].getX(), triangs[j][2].getY())
+                    '''
                     glVertex2d(pts[triangs[j][0]].getX(), pts[triangs[j][0]].getY())
                     glVertex2d(pts[triangs[j][1]].getX(), pts[triangs[j][1]].getY())
                     glVertex2d(pts[triangs[j][2]].getX(), pts[triangs[j][2]].getY())
+                    '''
                     glEnd()
             segments = self.m_hmodel.getSegments()
             for curv in segments:
@@ -236,7 +241,7 @@ class MyCanvas(QtOpenGL.QGLWidget):
                 segment.addPoint(pt1_U.x(), pt1_U.y())
                 #tratamento de exceção para o erro divisão por zero da biblioteca ao inserir
                 try:
-                    self.m_controller.addSegment(segment, 0.01)
+                    self.m_controller.addSegment(segment, 0)
                 except:
                     print("Erro ao inserir segmento")
                     print("[p1: ", pt0_U.x(), ", ", pt0_U.y()," ] [p2: ",pt1_U.x(),", ", pt1_U.y()," ]", sep="")
@@ -291,7 +296,7 @@ class MyCanvas(QtOpenGL.QGLWidget):
                 #após o fim do calculo dos pontos inserimos o segmento na lista
                 #tratamento de exceção para o erro divisão por zero da biblioteca ao inserir
                 try:
-                    self.m_controller.addSegment(segment, 0.01)
+                    self.m_controller.addSegment(segment, 0)
                 except:
                     print("erro ao inserir segmento")
                 #self.update()
