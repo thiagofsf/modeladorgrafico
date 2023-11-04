@@ -18,6 +18,7 @@ python3 -m pip install PyQt5
 pip install numpy
 pip install pyopengl
 pip install matplotlib
+pip install jsonschema
 ```
 
 Além das bibliotecas acima, também foi utilizada a biblioteca hetool: https://gitlab.com/danilosb/hetoollibrary (os arquivos da biblioteca hetool já estarão disponíveis ao baixar o projeto)
