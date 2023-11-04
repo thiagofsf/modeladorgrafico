@@ -241,9 +241,10 @@ class MyCanvas(QtOpenGL.QGLWidget):
                 segment.addPoint(pt1_U.x(), pt1_U.y())
                 #tratamento de exceção para o erro divisão por zero da biblioteca ao inserir
                 try:
-                    self.m_controller.addSegment(segment, 0)
-                except:
+                    self.m_controller.addSegment(segment, 0.1)
+                except Exception as e:
                     print("Erro ao inserir segmento")
+                    print(e)
                     print("[p1: ", pt0_U.x(), ", ", pt0_U.y()," ] [p2: ",pt1_U.x(),", ", pt1_U.y()," ]", sep="")
                 #self.update()
                 #self.repaint()
@@ -296,9 +297,10 @@ class MyCanvas(QtOpenGL.QGLWidget):
                 #após o fim do calculo dos pontos inserimos o segmento na lista
                 #tratamento de exceção para o erro divisão por zero da biblioteca ao inserir
                 try:
-                    self.m_controller.addSegment(segment, 0)
-                except:
+                    self.m_controller.addSegment(segment, 0.1)
+                except Exception as e:
                     print("erro ao inserir segmento")
+                    print(e)
                 #self.update()
                 #self.repaint()
                 #resetando pontos no fim
