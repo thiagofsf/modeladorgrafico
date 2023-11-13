@@ -58,14 +58,14 @@ class MyWindow(QMainWindow):
         if a.text() == "line":
             self.canvas.mode = 1
             self.canvas.pointcount = 0
-            print('mode', self.canvas.mode, sep=' ')
+            print('- Selecionado Modo Linha')
         if a.text() == "bezier":
             self.canvas.mode = 2
             self.canvas.pointcount = 0
-            print('mode', self.canvas.mode, sep=' ')
+            print('- Selecionado Modo Bezier')
         if a.text() == "reset":
             self.canvas.resetCanvas()
-            print('reset')
+            print('Reset - Limpar Canvas')
 
     #função que ajusta a granularidade de acordo com a atualização do elemento
     def setGranularity(self):

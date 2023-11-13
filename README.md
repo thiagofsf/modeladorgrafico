@@ -147,4 +147,23 @@ Janela redimensionada:
 
 ![granularidade 3](./docs/img/resize.png)
 
+## Problemas Encontrados
+
+Algumas vezes acontece um erro na inserção do segmento ao Model, dessa forma, a excessão é tratada e é possível ver no console a lista de pontos coletadas e os pontos coletados no momento da falha, algo como deve ser exibido no console:
+
+```bash
+- Selecionado Modo Bezier
+coletando bezier com granularidade 50
+Segmento Adicionado
+[p1: -907.103825136612, -393.44262295081967 ] [p2: -601.0928961748632, 622.950819672131 ] [p3: 502.73224043715845, -251.36612021857923 ]
+- Selecionado Modo Linha
+Segmento Adicionado
+[p1: -333.33333333333326, -344.2622950819672 ] [p2: -633.879781420765, 491.80327868852464 ]
+Erro ao inserir segmento
+[p1: 81.96721311475403, -420.7650273224044 ] [p2: -978.1420765027323, 366.1202185792349 ]
+```
+
+Um exemplo mais específico do erro encontrado pode ser visto na imagem a seguir:
+
+![plot](./docs/img/erro.png)
 
