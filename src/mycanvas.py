@@ -6,7 +6,7 @@ from PyQt5 import QtCore
 from hetool.include.hetool import HeController
 from hetool.include.hetool import HeModel
 from hetool.geometry.segments.polyline import Polyline
-from geometry.point import Point
+from hetool.geometry.point import Point
 from hetool.compgeom.tesselation import Tesselation
 
 class MyCanvas(QtOpenGL.QGLWidget):
