@@ -17,7 +17,7 @@ class MyWindow(QMainWindow):
         #create a toolbar
         tb = self.addToolBar("File")
         tb2 = self.addToolBar("Tools")
-        fit = QAction(QIcon("./fit.png"), "fit", self)
+        fit = QAction(QIcon("fit.png"), "fit", self)
         reset = QAction(QIcon("reset.png"), "reset", self)
         granularitylabel = QLabel("Granularity:")
         #toolbar primaria
