@@ -84,7 +84,7 @@ Desenha uma linha na tela
 
 **uso:**
 
-Acione a ferramenta linha (line) na barra de ferramentas
+Acione a ferramenta linha (line) na barra de ferramentas, o botão permanecerá 'aceso' indicando a ferramenta selecionada
 Clique para coletar o primeiro ponto da linha, uma linha pontilhada na cor vermelha guiará a coleta do próximo ponto:
 
 ![plot](./docs/img/line-preview.png)
@@ -102,7 +102,7 @@ Desenha uma linha curva do tipo Bézier Quadrática (3 pontos) na tela
 
 **uso:**
 
-Acione a ferramenta Bézier na barra de ferramentas
+Acione a ferramenta Bézier na barra de ferramentas, o botão permanecerá 'aceso' indicando a ferramenta selecionada
 Clique para coletar o primeiro ponto da linha, uma linha pontilhada na cor vermelha guiará a coleta do próximo ponto:
 
 ![plot](./docs/img/bezier-preview-1.png)
@@ -114,6 +114,8 @@ Ao coletar o primeiro ponto da linha, uma linha pontilhada na cor vermelha guiar
 Clique novamente para coletar o terceiro ponto da linha, a linha final será desenhada a partir dos 3 vertices presentes na linha de prévia:
 
 ![plot](./docs/img/bezier-draw.png)
+
+**Obs:** Caso nenhuma ferramenta esteja selecionada, nada será desenhado na tela
 
 ### Ajustando a granularidade da curva coletada
 
